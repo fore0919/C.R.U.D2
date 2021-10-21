@@ -58,17 +58,3 @@ class DogView(View):
             )
         return JsonResponse({'MESSAGE':'CREATED'}, status=201)
 
-"""
-    def get(self, request):
-        dogs = Dog.objects.all()
-        result = []
-        
-        for dog in dogs : 
-            dog_info = {
-                'name'  : dog.name,
-                'age'   : dog.age,
-                'owner' : dog.owner.name,
-            }
-            result.append(dog_info)
-        return JsonResponse({'result':'result'}, status=200) 
-"""

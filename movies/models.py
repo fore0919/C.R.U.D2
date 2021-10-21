@@ -7,12 +7,13 @@ class Actors(models.Model):
     date_of_birth   = models.DateField()
 
     class Meta:
-        db_table = 'owner'
+        db_table    = 'actor'
 
-class Dog(models.Model):
-    name     = models.CharField(max_length=25)
-    age      = models.IntegerField(default=0)
-    owner    = models.ForeignKey('Owner', on_delete=models.CASCADE)
+class Movies(models.Model):
+    title           = models.CharField(max_length=25)
+    release_date    = models.DateField()
+    running_time    = models.IntegerField()
+    actor           = models.ManyToManyField('Actor',related_name='movie')
 
     class Meta:
-        db_table = 'dog'
+        db_table = 'movie'
